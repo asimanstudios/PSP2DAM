@@ -98,8 +98,8 @@ pstree
     
 10. Lanza el comando `ping` contra `google.com` en segundo plano (&) y obtén su identificador de proceso (PID).
 ```bash
-ping google.com &   # Lanza ping en segundo plano
-echo $!  # Muestra el ultimo proceso en segundo plano
+ping google.com & >  # Lanza ping en segundo plano redirigiendolo.
+echo $!  # Muestra el ultimo proceso en segundo plano.
 
 ```
     
