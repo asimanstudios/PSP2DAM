@@ -98,7 +98,7 @@ pstree
     
 10. Lanza el comando `ping` contra `google.com` en segundo plano (&) y obtén su identificador de proceso (PID).
 ```bash
-ping google.com & >  # Lanza ping en segundo plano redirigiendolo.
+ping google.com &  # Lanza ping en segundo plano redirigiendolo.
 echo $!  # Muestra el ultimo proceso en segundo plano.
 
 ```
@@ -110,11 +110,20 @@ kill 1576 # En mi caso ese numero ya que es el pid del proceso en cuestión ahi 
     
 12. Vuelve a lanzarlo y esta vez deténlo, luego reactívalo.
 ```bash
-
+ping google.com &
+echo $! # ver rl ultimo proceso en segundo plano para asi ver su uid o tmb se puede filtrar si lleva un rato ya con (ps aux | grep '[p]ing google.com')
+kill -STOP 690  # Detener el proceso/suspenderlo
+kill -CONT 690  # Reactivar el proceso
 ```
     
 13. Crea un script que capture la señal de interrupción (Ctrl+C) y muestre un mensaje en lugar de cerrarse.
 ```bash
+#!/bin/bash
+trap "echo 'No puedes detenerme con Ctrl+C'" SIGINT
+while true; do
+    echo "Ejecutando..."
+    sleep 2
+done
 
 ```
     
@@ -125,52 +134,53 @@ kill 1576 # En mi caso ese numero ya que es el pid del proceso en cuestión ahi 
 
 14. Consulta el estado del servicio de conexión remota (por ejemplo, `ssh`).
 ```bash
+systemctl status ssh
 
 ```
     
 15. Inicia dicho servicio si está instalado.
 ```bash
-
+sudo systemctl start ssh
 ```
     
 16. Desactívalo del arranque automático y vuelve a activarlo.
 ```bash
-
+sudo systemctl disable ssh
+sudo systemctl enable ssh
 ```
-    
-
 ---
 
 ## **Bloque 4: Archivos y directorios**
 
 17. Lista todos los archivos, incluidos los ocultos, en tu directorio personal.
 ```bash
-
+ls -la ~
 ```
     
 18. Crea una carpeta llamada `prueba`.
 ```bash
+mkdir ~/prueba # si no estoy ya en el directorio en caso de estar dentro con poner mkdir prueba se crea ahi.
 
 ```
     
 19. Dentro de esa carpeta, crea un archivo `notas.txt` que contenga el texto “Hola Linux”.
 ```bash
-
+echo "Hola Linux" > ~/prueba/notas.txt
 ```
     
 20. Copia ese archivo con otro nombre.
 ```bash
-
+cp ~/prueba/notas.txt ~/prueba/notas_copia.txt
 ```
     
 21. Renombra el archivo copiado.
 ```bash
-
+mv ~/prueba/notas_copia.txt ~/prueba/notas_renombrado.txt
 ```
     
 22. Borra el archivo renombrado.
 ```bash
-
+rm ~/prueba/notas_renombrado.txt
 ```
     
 
@@ -180,27 +190,27 @@ kill 1576 # En mi caso ese numero ya que es el pid del proceso en cuestión ahi 
 
 23. Redirige la salida de un listado de archivos a un archivo llamado `listado.txt`.
 ```bash
-
+ls > listado.txt
 ```
     
 24. Añade una nueva línea al final del mismo archivo con el texto "Fin del listado".
 ```bash
-
+echo "Fin del listado" >> listado.txt
 ```
     
 25. Redirige los errores (2) de una operación no válida (`let a=3/0`) a un dispositivo nulo para ignorarlos.
 ```bash
-
+let a=3/0 2>/dev/null #una division entre 0 invalida
 ```
     
 26. Filtra de una lista de procesos únicamente aquellos que contengan la palabra “bash”.
 ```bash
-
+ps aux | grep bash
 ```
     
 27. Muestra solo las últimas 5 líneas del archivo `listado.txt`.
 ```bash
-
+tail -n 5 listado.txt #-n se usa para definir el numero de lineas a mostrar en tail y de ahi le ponemos el 5 que son las que queremos.
 ```
     
 
@@ -235,39 +245,38 @@ kill 1576 # En mi caso ese numero ya que es el pid del proceso en cuestión ahi 
 
 32. Comprueba la conectividad con el servidor `google.com` enviando unos pocos paquetes.
 ```bash
-
+ping -c 4 google.com # voy a enviar 4
 ```
     
 33. Muestra la configuración de tus interfaces de red.
 ```bash
-
+ip a
 ```
     
 34. Revisa qué puertos están en escucha en tu máquina.
 ```bash
-
+ss -tuln
 ```
     
 35. Consulta la dirección IP asociada al dominio `google.com`.
 ```bash
-
+nslookup google.com
 ```
     
 36. Realiza la misma consulta de resolución DNS usando otra herramienta distinta.
 ```bash
-
+dig google.com
 ```
     
 37. Conéctate de forma remota a otra máquina mediante un protocolo seguro (si tienes acceso).
 ```bash
-
+ssh asiman@192.168.18.15
 ```
     
 38. Copia un archivo desde tu máquina a otra mediante una conexión remota segura.
 ```bash
-
+scp archivo.txt asiman@192.168.1.50:~/prueba/
 ```
-    
 
 ---
 
@@ -275,27 +284,27 @@ kill 1576 # En mi caso ese numero ya que es el pid del proceso en cuestión ahi 
 
 39. Crea un usuario de prueba llamado `alumno1`.
 ```bash
-
+sudo adduser alumno1 #existe tambien useradd
 ```
     
 40. Cámbiale la contraseña.
 ```bash
-
+sudo passwd alumno1
 ```
     
 41. Cambia los permisos de un archivo a `755`.
 ```bash
-
+chmod 755 archivo.txt
 ```
     
 42. Cambia el propietario de un archivo a otro usuario.
 ```bash
-
+sudo chown alumno1 archivo.txt
 ```
     
 43. Elimina el usuario creado.
 ```bash
-
+sudo deluser alumno1 #existe tambien userdel
 ```
     
 
