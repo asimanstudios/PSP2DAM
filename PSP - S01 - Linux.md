@@ -225,18 +225,22 @@ mkfifo cola
     
 29. Desde una terminal, deja el archivo `cola` en espera de datos. Desde otra terminal, escribe un mensaje en esa tubería.
 ```bash
-
+cat cola #en la primera terminal
+echo "Hola desde tubería" > cola # en la segunda terminal
 
 ```
     
 30. Verifica que `cola` es realmente una tubería.
 ```bash
+ls -l | grep cola
+file cola
 
 ```
     
 31. Establece un canal de comunicación entre dos terminales locales utilizando una herramienta que permite redirigir flujos de entrada y salida entre sockets.
 ```bash
-
+nc -l -p 1234
+nc localhost 1234
 ```
     
 
