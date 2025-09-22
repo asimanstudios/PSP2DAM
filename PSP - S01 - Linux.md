@@ -220,11 +220,12 @@ tail -n 5 listado.txt #-n se usa para definir el numero de lineas a mostrar en t
 
 28. Crea una tubería con nombre llamada `cola`.
 ```bash
-
+mkfifo cola
 ```
     
 29. Desde una terminal, deja el archivo `cola` en espera de datos. Desde otra terminal, escribe un mensaje en esa tubería.
 ```bash
+
 
 ```
     
