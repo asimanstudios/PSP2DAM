@@ -241,6 +241,10 @@ file cola
 ```bash
 nc -l -p 1234
 nc localhost 1234
+
+# otra forma es con socat
+socat TCP-LISTEN:1234 STDOUT # consola de salida
+socat STDIN TCP:localhost:1234 # consola de entrada
 ```
     
 
