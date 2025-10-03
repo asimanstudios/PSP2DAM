@@ -124,6 +124,16 @@ while true; do
     echo "Ejecutando..."
     sleep 2
 done
+```
+- Ejemplo con otro comando:
+```bash
+#!/bin/bash
+trap "echo '¡Me están matando con kill!'" SIGTERM
+
+while true; do
+    echo "Esperando... (PID $$)"
+    sleep 2
+done
 
 ```
     
