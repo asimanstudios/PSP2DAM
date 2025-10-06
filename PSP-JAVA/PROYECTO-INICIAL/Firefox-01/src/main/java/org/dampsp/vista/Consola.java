@@ -18,7 +18,6 @@ public class Consola {
         int opcion = Escaner.pedirInt();
         switch (opcion) {
             case 1:
-                mostrarInfo("Introduce el proceso a iniciar");
                 LanzarProcesos.lanzarProceso(pedirProceso());
                 break;
 
