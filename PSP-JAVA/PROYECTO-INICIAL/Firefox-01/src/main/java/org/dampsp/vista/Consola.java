@@ -18,7 +18,7 @@ public class Consola {
         int opcion = Escaner.pedirInt();
         switch (opcion) {
             case 1:
-                LanzarProcesos.lanzarProceso(pedirProceso());
+                LanzarProcesos.lanzarProceso(leerConsola("Introduce la ruta de tu ejecutable: "));
                 break;
 
             case 2:
@@ -39,10 +39,15 @@ public class Consola {
         System.out.println("[¡] " + mensaje);
     }
 
-    public static String pedirProceso(){
-        String ruta;
-        mostrarInfo("Introduce la ruta de tu ejecutable: ");
-        ruta=Escaner.pedirDato();
-        return ruta;
+    public static void mostrarError(String mensaje){
+        System.out.println("[❗] " + mensaje);
     }
+
+    public static String leerConsola(String mensaje){
+        String dato;
+        System.out.println(mensaje);
+        dato = Escaner.pedirDato();
+        return dato;
+    }
+
 }
