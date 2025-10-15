@@ -1,0 +1,15 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: F447-FF4F
+
+ Directorio de C:\Users\adris\Desktop\multiprocesos
+
+15/10/2025  18:01    <DIR>          .
+15/10/2025  17:59    <DIR>          ..
+15/10/2025  17:59               490 .gitignore
+15/10/2025  17:59    <DIR>          .idea
+15/10/2025  17:59               654 pom.xml
+15/10/2025  18:01                 0 salida_ls.txt
+15/10/2025  17:59    <DIR>          src
+15/10/2025  18:01    <DIR>          target
+               3 archivos          1.144 bytes
+               5 dirs     172.703.744 bytes libres
