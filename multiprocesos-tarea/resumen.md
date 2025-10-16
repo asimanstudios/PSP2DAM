@@ -13,7 +13,7 @@ Se creó la clase `LanzadorProcesos` con un método `ejecutarDir(String carpeta)
   public void ejecutarDir(String carpeta) {
       try {
           ProcessBuilder processBuilder = new ProcessBuilder("cmd", "/c", "dir", carpeta);
-          processBuilder.redirectOutput(new File("salida_ls.txt"));
+          processBuilder.redirectOutput(new File("datos/salida_ls.txt"));
           processBuilder.redirectErrorStream(true); // Redirigir errores a salida estándar
 
           Process proceso = processBuilder.start();
@@ -112,11 +112,11 @@ El método `ejecutarPingsParalelos()` lanza dos procesos `ping` en paralelo: uno
   public void ejecutarPingsParalelos() {
       try {
           ProcessBuilder processBuilder1 = new ProcessBuilder("cmd", "/c", "ping", "localhost");
-          processBuilder1.redirectOutput(new File("ping_localhost.txt"));
+          processBuilder1.redirectOutput(new File("datos/ping_localhost.txt"));
           processBuilder1.redirectErrorStream(true);
 
           ProcessBuilder processBuilder2 = new ProcessBuilder("cmd", "/c", "ping", "127.0.0.1");
-          processBuilder2.redirectOutput(new File("ping_127.txt"));
+          processBuilder2.redirectOutput(new File("datos/ping_127.txt"));
           processBuilder2.redirectErrorStream(true);
 
           Process proceso1 = processBuilder1.start();

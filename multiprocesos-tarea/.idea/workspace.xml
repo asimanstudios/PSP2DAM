@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb08fa0-99aa-4a82-960a-42a48b62f371" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ping_localhost.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ping_localhost.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resumen.md" beforeDir="false" afterPath="$PROJECT_DIR$/resumen.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salida_ls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/salida_ls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LanzadorProcesos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/damaadd/LanzadorProcesos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/damaadd/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/damaadd/LanzadorProcesos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/damaadd/LanzadorProcesos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
