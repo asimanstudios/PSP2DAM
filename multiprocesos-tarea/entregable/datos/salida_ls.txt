@@ -1,0 +1,20 @@
+ El volumen de la unidad C es Acer
+ El n£mero de serie del volumen es: 7E5F-0F52
+
+ Directorio de C:\Users\adris\Documents\PSP-2-DAM\PSP2DAM\multiprocesos-tarea
+
+16/10/2025  11:53    <DIR>          .
+16/10/2025  10:29    <DIR>          ..
+16/10/2025  10:29               527 .gitignore
+16/10/2025  11:54    <DIR>          .idea
+16/10/2025  11:53    <DIR>          datos
+16/10/2025  11:10                 0 null
+16/10/2025  11:10               488 ping_127.txt
+16/10/2025  11:10               398 ping_localhost.txt
+16/10/2025  10:54               660 pom.xml
+16/10/2025  11:13             8.099 resumen.md
+16/10/2025  11:10               813 salida_ls.txt
+16/10/2025  10:54    <DIR>          src
+16/10/2025  10:55    <DIR>          target
+               7 archivos         10.985 bytes
+               6 dirs  32.113.401.856 bytes libres
