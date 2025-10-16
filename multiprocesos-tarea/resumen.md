@@ -66,36 +66,37 @@ El método `ejecutarPingGoogle()` lanza el comando `ping -n 6 google.com` y mues
 ### 3. Automatizar la Ejecución de Varios Procesos
 El método `automatizarSecuencia()` ejecuta tres comandos en orden: `echo "Inicio de la tarea"`, `timeout /t 3 > null`, y `echo %date% %time%`.
 
-- **Código relevante:**
+- **Código:**
   ```java
-  public void automatizarSecuencia() {
-      try {
-          //echo "Inicio de la tarea"
-          ProcessBuilder processBuilder1 = new ProcessBuilder("cmd", "/c", "echo", "Inicio de la tarea");
-          processBuilder1.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-          Process proceso1 = processBuilder1.start();
-          proceso1.waitFor();
+    public void automatizarSecuencia() {
+        try {
+            System.out.println("Tarea 3 - ejecutar secuencia.");
 
-          // Comando 2: timeout /t 3 > null
-          ProcessBuilder processBuilder2 = new ProcessBuilder("cmd", "/c", "timeout", "/t", "3", ">", "null");
-          processBuilder2.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-          Process proceso2 = processBuilder2.start();
-          proceso2.waitFor();
+            // Comando 1: echo "Inicio de la tarea"
+            ProcessBuilder processBuilder1 = new ProcessBuilder("cmd", "/c", "echo Inicio de la tarea");
+            processBuilder1.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+            Process proceso1 = processBuilder1.start();
+            proceso1.waitFor();
 
-          // Comando 3: echo %date% %time%
-          ProcessBuilder processBuilder3 = new ProcessBuilder("cmd", "/c", "echo", "%date%", "%time%");
-          processBuilder3.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-          Process proceso3 = processBuilder3.start();
-          proceso3.waitFor();
+            // Comando 2: timeout /t 3 > nul
+            ProcessBuilder processBuilder2 = new ProcessBuilder("cmd", "/c", "timeout /t 3 > null");
+            processBuilder2.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+            Process proceso2 = processBuilder2.start();
+            proceso2.waitFor();
 
-          System.out.println("Tarea 3 - ejecutar secuencia.");
-      } catch (IOException | InterruptedException e) {
-          e.printStackTrace();
-      }
-  }
+            // Comando 3: echo %date% %time%
+            ProcessBuilder processBuilder3 = new ProcessBuilder("cmd", "/c", "echo %date% %time%");
+            processBuilder3.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+            Process proceso3 = processBuilder3.start();
+            proceso3.waitFor();
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
   ```
 
-- **Explicación de redirecciones:** Todos usan `INHERIT` para mostrar en consola. El `timeout` espera 3 segundos sin mostrar salida.
+- **Explicación de redirecciones:** Todos usan `INHERIT` para mostrar en consola al heredar de arriba heredan del programa y el programa lo muestra por consola. El `timeout` espera 3 segundos sin mostrar salida.
 
 - **Captura de salida:** Se muestra en consola algo asi:
   ```
@@ -167,4 +168,4 @@ El método `forzarError()` ejecuta un comando inválido para mostrar la gestión
 - **Captura de salida:** Se muestra en consola el error del comando inexistente y el código de salida del error.
 
 ## Conclusión
-El programa muestra como tal el uso de `ProcessBuilder` para gestionar procesos externos, redirigir salidas y manejar errores. En este caso se ejecuta en windows pero se puede transladar a otros sistemas reemplazando los argumentos de comandos este programa nos va a permitir generar y gestionar procesos dentro de aplicaciones internonectadas y un control general de procesos y comandos internos tanto de las aplicaciones como del sistema.
+El programa muestra como tal el uso de `ProcessBuilder` para gestionar procesos externos, redirigir salidas y manejar errores. En este caso se ejecuta en windows pero se puede transladar a otros sistemas reemplazando los argumentos de comandos este tipo programas nos van a permitir generar y gestionar procesos dentro de aplicaciones internonectadas y un control general de procesos y comandos internos tanto de las aplicaciones como del sistema.

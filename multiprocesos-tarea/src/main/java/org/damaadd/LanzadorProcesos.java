@@ -1,4 +1,4 @@
-package org.example;
+package org.damaadd;
 import java.io.File;
 import java.io.IOException;
 
@@ -34,29 +34,31 @@ public class LanzadorProcesos {
 
     public void automatizarSecuencia() {
         try {
-            //echo "Inicio de la tarea"
-            ProcessBuilder processBuilder1 = new ProcessBuilder("cmd", "/c", "echo", "Inicio de la tarea");
+            System.out.println("Tarea 3 - ejecutar secuencia.");
+
+            // Comando 1: echo "Inicio de la tarea"
+            ProcessBuilder processBuilder1 = new ProcessBuilder("cmd", "/c", "echo Inicio de la tarea");
             processBuilder1.redirectOutput(ProcessBuilder.Redirect.INHERIT);
             Process proceso1 = processBuilder1.start();
             proceso1.waitFor();
 
-            // Comando 2: timeout /t 3 > null
-            ProcessBuilder processBuilder2 = new ProcessBuilder("cmd", "/c", "timeout", "/t", "3", ">", "null");
+            // Comando 2: timeout /t 3 > nul
+            ProcessBuilder processBuilder2 = new ProcessBuilder("cmd", "/c", "timeout /t 3 > null");
             processBuilder2.redirectOutput(ProcessBuilder.Redirect.INHERIT);
             Process proceso2 = processBuilder2.start();
             proceso2.waitFor();
 
             // Comando 3: echo %date% %time%
-            ProcessBuilder processBuilder3 = new ProcessBuilder("cmd", "/c", "echo", "%date%", "%time%");
+            ProcessBuilder processBuilder3 = new ProcessBuilder("cmd", "/c", "echo %date% %time%");
             processBuilder3.redirectOutput(ProcessBuilder.Redirect.INHERIT);
             Process proceso3 = processBuilder3.start();
             proceso3.waitFor();
 
-            System.out.println("Tarea 3 - ejecutar secuencia.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
+
 
     public void ejecutarPingsParalelos() {
         try {

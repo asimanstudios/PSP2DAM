@@ -1,0 +1,15 @@
+ El volumen de la unidad C es Acer
+ El n£mero de serie del volumen es: 7E5F-0F52
+
+ Directorio de C:\Users\adris\Documents\PSP-2-DAM\PSP2DAM\multiprocesos-tarea\src\main\java\org\damaadd
+
+16/10/2025  11:04    <DIR>          .
+16/10/2025  10:55    <DIR>          ..
+16/10/2025  11:04             4.223 LanzadorProcesos.java
+16/10/2025  10:55               631 Main.java
+16/10/2025  11:01                 0 null
+16/10/2025  11:01               488 ping_127.txt
+16/10/2025  11:01               398 ping_localhost.txt
+16/10/2025  11:05                 0 salida_ls.txt
+               6 archivos          5.740 bytes
+               2 dirs  31.454.539.776 bytes libres
